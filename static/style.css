@@ -1,0 +1,21 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: 'border-box'
+}
+
+h1 {
+	color: steelblue;
+	text-align: center;
+	padding: 2rem;
+}
+
+#btn-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#titles-btn {
+	padding: 0.5rem 1rem;
+}
