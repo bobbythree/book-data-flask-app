@@ -16,9 +16,6 @@ def index():
 
 @app.route("/titles")
 def titles():
-    db = mysql.connector.connect(**config)
-    cursor = db.cursor()
-
     cursor.execute("SELECT title FROM novels")
     result = cursor.fetchall()
     output = []
@@ -28,5 +25,17 @@ def titles():
     return jsonify(output)        
         
     db.close()
-    cursor.close()    
-    
+    cursor.close()  
+
+@app.route("/subseries")
+def titles_and_subseries():
+    cursor.execute(
+        """SELECT novels.title, subseries.subseries_name FROM novels
+        INNER JOIN subseries ON novels.subseries_id = subseries.subseries_id"""
+    )
+    result = cursor.fetchall()
+    output = []
+    for x in result:
+        x = f"Title: {x[0]}, Subseries: {x[1]}"
+        output.append(x)
+    return jsonify(output)

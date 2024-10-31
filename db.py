@@ -1,3 +1,4 @@
+from flask import Flask, jsonify
 import mysql.connector
 from config import config
 
@@ -16,11 +17,13 @@ def query_all():
 def query_titles():
     cursor.execute("SELECT title FROM novels")
     result = cursor.fetchall()
+    output = []
     for x in result:
         x = x[0]
-        print("{}".format(x))
-    
+        output.append(x) 
+    return jsonify(output)        
+        
     db.close()
-    cursor.close()    
+    cursor.close()     
 
 
