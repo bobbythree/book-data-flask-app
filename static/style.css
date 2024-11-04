@@ -16,6 +16,7 @@ h1 {
 	justify-content: center;
 }
 
-#titles-btn {
+#titles-btn,
+#sub-btn {
 	padding: 0.5rem 1rem;
 }
