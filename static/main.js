@@ -1,12 +1,13 @@
 window.onload = () => {
   const titlesBtn = document.getElementById('titles-btn');
-  const titlesOutput = document.getElementById('titles-output');
+  const pageOutput = document.getElementById('page-output');
 
   async function getTitles() {
     const url = '/titles';
     const res = await fetch(url);
-    const data = res.json();
-    console.log(data);
+    const data = await res.json();
+    pageOutput.innerText = JSON.stringify(data, null, 2)
+    // console.log(data)
   }
 
   titlesBtn.onclick = () => getTitles();
