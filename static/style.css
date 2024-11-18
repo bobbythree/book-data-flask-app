@@ -4,6 +4,10 @@
 	box-sizing: 'border-box'
 }
 
+body {
+	background-color: #242424
+}
+
 h1 {
 	color: steelblue;
 	text-align: center;
@@ -19,4 +23,9 @@ h1 {
 #titles-btn,
 #sub-btn {
 	padding: 0.5rem 1rem;
+}
+
+#page-output {
+	padding: 5rem;
+	color: gray;
 }

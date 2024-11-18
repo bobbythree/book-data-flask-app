@@ -7,8 +7,13 @@ window.onload = () => {
     const url = '/titles';
     const res = await fetch(url);
     const data = await res.json();
-    pageOutput.innerText = JSON.stringify(data, null, 2)
-    // console.log(data)
+    pageOutput.innerText = '';
+    const output = data.forEach(e => {
+      element = document.createElement('p');
+      pageOutput.appendChild(element)
+      element.innerText = e
+    })
+    return output
   }
 
   titlesBtn.onclick = () => getTitles();
@@ -17,8 +22,12 @@ window.onload = () => {
     const url = '/subseries';
     const res = await fetch(url);
     const data = await res.json();
-    pageOutput.innerText = JSON.stringify(data, null, 2)
-      // console.log(data)
+    pageOutput.innerText = '';
+    const output = data.forEach(e => {
+      element = document.createElement('p');
+      pageOutput.appendChild(element)
+      element.innerText = e
+    })
     }
   
     subBtn.onclick = () => getSubseries();

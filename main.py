@@ -28,13 +28,10 @@ def titles():
     """queries the db and returns book titles as json."""
 
     cursor.execute("SELECT title FROM novels")
-    result = cursor.fetchall()
-    output = []
-    for x in result:
-        x = x[0]
-        output.append(x)
+    data = cursor.fetchall()
+    output = [x[0] for x in data]
+    
     return jsonify(output)
-
 
 @app.route("/subseries")
 def titles_and_subseries():
@@ -44,9 +41,9 @@ def titles_and_subseries():
         """SELECT novels.title, subseries.subseries_name FROM novels
         INNER JOIN subseries ON novels.subseries_id = subseries.subseries_id"""
     )
-    result = cursor.fetchall()
+    data = cursor.fetchall()
     output = []
-    for x in result:
+    for x in data:
         x = f"Title: {x[0]}, Subseries: {x[1]}"
         output.append(x)
     return jsonify(output)
