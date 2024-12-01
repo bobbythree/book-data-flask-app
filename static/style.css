@@ -9,23 +9,24 @@ body {
 }
 
 h1 {
-	color: steelblue;
-	text-align: center;
-	padding: 2rem;
+	color: skyblue;
+	padding-left: 10rem;
+	padding-top: 3rem;
 }
 
 #btn-div {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	padding-left: 10rem;
+	padding-top: 3rem;
+	gap: 1rem;
 }
 
 #titles-btn,
 #sub-btn {
-	padding: 0.5rem 1rem;
+	padding: 0.25rem 0.5rem;
 }
 
 #page-output {
-	padding: 5rem;
+	padding-left: 10rem;
+	padding-top: 3rem;
 	color: gray;
 }
